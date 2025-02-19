@@ -1,6 +1,7 @@
 package gohorse
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -43,6 +44,7 @@ func (gh *GoHorse) RegisterController(controller interface{}) {
 	err := gh.container.Invoke(controller)
 	if err != nil {
 		log.Panic(err)
+		fmt.Println(err)
 	}
 }
 
